@@ -27,7 +27,7 @@ class _QuizScreenState extends State<QuizScreen> with SingleTickerProviderStateM
 
   late List<Question> quizQuestions;
 
-  int feverSeconds = 5;
+  int feverSeconds = 6;
   Timer? feverTimer;
   double feverProgress = 1.0;
 
@@ -96,7 +96,7 @@ class _QuizScreenState extends State<QuizScreen> with SingleTickerProviderStateM
           streak++;
 
           if (feverMode) {
-            feverSeconds = 5;
+            feverSeconds = 6;
           }
         } else if (usedTime <= 6) {
           score += 1;
@@ -108,7 +108,7 @@ class _QuizScreenState extends State<QuizScreen> with SingleTickerProviderStateM
         if (streak >= 3 && !feverMode) {
           feverMode = true;
           feverProgress = 1.0;
-          feverSeconds = 5;
+          feverSeconds = 6;
           feverTimer?.cancel();
           feverTimer = Timer.periodic(Duration(seconds: 1), (timer) {
             setState(() {
